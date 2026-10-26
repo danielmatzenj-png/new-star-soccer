@@ -1,0 +1,306 @@
+// Game Database: Leagues, Clubs, Lifestyle, Boots, Sponsors, Girlfriends, and NSS Dilemmas
+const NSSData = {
+  leagues: {
+    ES: {
+      country: 'España',
+      flag: '🇪🇸',
+      tiers: [
+        {
+          name: 'División Bronce',
+          wageBase: 12,
+          clubs: [
+            { name: 'CD Cantera', color: '#2563eb' },
+            { name: 'Atlético Sur', color: '#dc2626' },
+            { name: 'UD Costa', color: '#eab308' },
+            { name: 'Real Sierra', color: '#16a34a' },
+            { name: 'Sporting Norte', color: '#9333ea' },
+            { name: 'Rayo Valle', color: '#f97316' },
+            { name: 'CF Puerto', color: '#06b6d4' },
+            { name: 'Gimnástica', color: '#ec4899' },
+          ],
+        },
+        {
+          name: 'Segunda División',
+          wageBase: 35,
+          clubs: [
+            { name: 'Zaragoza CF', color: '#1d4ed8' },
+            { name: 'Sporting Gijón', color: '#ef4444' },
+            { name: 'Málaga Sol', color: '#38bdf8' },
+            { name: 'Valladolid', color: '#7e22ce' },
+            { name: 'Tenerife', color: '#2563eb' },
+            { name: 'Granada Sur', color: '#b91c1c' },
+            { name: 'Levante UD', color: '#1e40af' },
+            { name: 'Elche Palmera', color: '#15803d' },
+          ],
+        },
+        {
+          name: 'Primera Estrella',
+          wageBase: 95,
+          clubs: [
+            { name: 'Madrid Blanco', color: '#f8fafc' },
+            { name: 'FC Blaugrana', color: '#1d4ed8' },
+            { name: 'Atlético Metropolitano', color: '#dc2626' },
+            { name: 'Sevilla Nervión', color: '#ef4444' },
+            { name: 'Valencia Turia', color: '#f97316' },
+            { name: 'Athletic Norte', color: '#b91c1c' },
+            { name: 'Real Bético', color: '#16a34a' },
+            { name: 'San Sebastián', color: '#2563eb' },
+          ],
+        },
+      ],
+    },
+    AR: {
+      country: 'Argentina',
+      flag: '🇦🇷',
+      tiers: [
+        {
+          name: 'Primera C',
+          wageBase: 12,
+          clubs: [
+            { name: 'Defensores Sur', color: '#dc2626' },
+            { name: 'Sportivo Dock', color: '#2563eb' },
+            { name: 'Villa Luro', color: '#16a34a' },
+            { name: 'Central Córdoba', color: '#eab308' },
+            { name: 'Estrella Austral', color: '#9333ea' },
+            { name: 'Deportivo Merlo', color: '#38bdf8' },
+            { name: 'Unión Avellaneda', color: '#f97316' },
+            { name: 'Real Pilar', color: '#ec4899' },
+          ],
+        },
+        {
+          name: 'Primera Nacional',
+          wageBase: 35,
+          clubs: [
+            { name: 'Chacarita', color: '#dc2626' },
+            { name: 'Belgrano', color: '#38bdf8' },
+            { name: 'San Martín', color: '#ef4444' },
+            { name: 'Quilmes', color: '#1e3a8a' },
+            { name: 'Ferro Oeste', color: '#16a34a' },
+            { name: 'Almirante', color: '#eab308' },
+            { name: 'Nueva Chicago', color: '#15803d' },
+            { name: 'Atlanta', color: '#2563eb' },
+          ],
+        },
+        {
+          name: 'Liga Profesional',
+          wageBase: 95,
+          clubs: [
+            { name: 'Boca Xeneize', color: '#1d4ed8' },
+            { name: 'River Millonario', color: '#ef4444' },
+            { name: 'Racing Academia', color: '#38bdf8' },
+            { name: 'Independiente Rojo', color: '#dc2626' },
+            { name: 'San Lorenzo', color: '#1e40af' },
+            { name: 'Vélez Fortín', color: '#2563eb' },
+            { name: 'Estudiantes LP', color: '#b91c1c' },
+            { name: 'Rosario Canalla', color: '#eab308' },
+          ],
+        },
+      ],
+    },
+    MX: {
+      country: 'México',
+      flag: '🇲🇽',
+      tiers: [
+        {
+          name: 'Liga Premier',
+          wageBase: 12,
+          clubs: [
+            { name: 'Pioneros FC', color: '#dc2626' },
+            { name: 'Gavilanes', color: '#16a34a' },
+            { name: 'Alacranes', color: '#22c55e' },
+            { name: 'Cafetaleros', color: '#eab308' },
+            { name: 'Tritones Vallarta', color: '#06b6d4' },
+            { name: 'Halcones Zapopan', color: '#3b82f6' },
+            { name: 'Cimarrones', color: '#f97316' },
+            { name: 'Inter Playa', color: '#9333ea' },
+          ],
+        },
+        {
+          name: 'Liga Expansión',
+          wageBase: 35,
+          clubs: [
+            { name: 'Atlante Potros', color: '#1d4ed8' },
+            { name: 'Leones Negros', color: '#eab308' },
+            { name: 'Celaya Toros', color: '#38bdf8' },
+            { name: 'Morelia Canarios', color: '#dc2626' },
+            { name: 'Venados Mérida', color: '#16a34a' },
+            { name: 'Tapatío', color: '#ef4444' },
+            { name: 'Mineros Zacatecas', color: '#ec4899' },
+            { name: 'Dorados Sinaloa', color: '#f59e0b' },
+          ],
+        },
+        {
+          name: 'Liga MX Estelar',
+          wageBase: 95,
+          clubs: [
+            { name: 'Águilas Capital', color: '#facc15' },
+            { name: 'Chivas Tapatías', color: '#ef4444' },
+            { name: 'Cruz Celeste', color: '#2563eb' },
+            { name: 'Pumas Universidad', color: '#ca8a04' },
+            { name: 'Tigres Norte', color: '#eab308' },
+            { name: 'Rayados MTY', color: '#1e3a8a' },
+            { name: 'Diablos Toluca', color: '#dc2626' },
+            { name: 'Pachuca Tuzos', color: '#3b82f6' },
+          ],
+        },
+      ],
+    },
+    EN: {
+      country: 'Inglaterra',
+      flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+      tiers: [
+        {
+          name: 'League Two',
+          wageBase: 12,
+          clubs: [
+            { name: 'Wrexham Dragons', color: '#dc2626' },
+            { name: 'Stockport County', color: '#2563eb' },
+            { name: 'Bradford Bantams', color: '#b91c1c' },
+            { name: 'Wimbledon Dons', color: '#1d4ed8' },
+            { name: 'Notts Magpies', color: '#475569' },
+            { name: 'Swindon Robins', color: '#ef4444' },
+            { name: 'Carlisle Blue', color: '#38bdf8' },
+            { name: 'Port Vale', color: '#eab308' },
+          ],
+        },
+        {
+          name: 'Championship',
+          wageBase: 35,
+          clubs: [
+            { name: 'Leeds White', color: '#f8fafc' },
+            { name: 'Sunderland Cats', color: '#dc2626' },
+            { name: 'Sheffield Blades', color: '#ef4444' },
+            { name: 'Norwich Canaries', color: '#22c55e' },
+            { name: 'Middlesbrough', color: '#b91c1c' },
+            { name: 'West Brom', color: '#1e3a8a' },
+            { name: 'Coventry Sky', color: '#38bdf8' },
+            { name: 'Watford Hornets', color: '#facc15' },
+          ],
+        },
+        {
+          name: 'Premier Star League',
+          wageBase: 95,
+          clubs: [
+            { name: 'Manchester Sky', color: '#38bdf8' },
+            { name: 'Arsenal Gunners', color: '#ef4444' },
+            { name: 'Liverpool Reds', color: '#dc2626' },
+            { name: 'Chelsea Blues', color: '#2563eb' },
+            { name: 'Manchester Devils', color: '#b91c1c' },
+            { name: 'Tottenham Lily', color: '#f8fafc' },
+            { name: 'Newcastle Magpies', color: '#475569' },
+            { name: 'Aston Lions', color: '#9333ea' },
+          ],
+        },
+      ],
+    },
+    BR: {
+      country: 'Brasil',
+      flag: '🇧🇷',
+      tiers: [
+        {
+          name: 'Série C',
+          wageBase: 12,
+          clubs: [
+            { name: 'Remo Belém', color: '#1e3a8a' },
+            { name: 'Náutico Recife', color: '#ef4444' },
+            { name: 'Figueirense', color: '#16a34a' },
+            { name: 'ABC Natal', color: '#475569' },
+            { name: 'Caxias Sul', color: '#b91c1c' },
+            { name: 'Londrina Tubarão', color: '#38bdf8' },
+            { name: 'Botafogo PB', color: '#dc2626' },
+            { name: 'Ypiranga', color: '#eab308' },
+          ],
+        },
+        {
+          name: 'Série B',
+          wageBase: 35,
+          clubs: [
+            { name: 'Santos Peixe', color: '#f8fafc' },
+            { name: 'Sport Recife', color: '#dc2626' },
+            { name: 'Ceará Vozão', color: '#475569' },
+            { name: 'Goiás Esmeralda', color: '#16a34a' },
+            { name: 'Coritiba Coxa', color: '#15803d' },
+            { name: 'América Coelho', color: '#22c55e' },
+            { name: 'Guarani Bugre', color: '#16a34a' },
+            { name: 'Ponte Preta', color: '#64748b' },
+          ],
+        },
+        {
+          name: 'Brasileirão Série A',
+          wageBase: 95,
+          clubs: [
+            { name: 'Flamengo Mengão', color: '#dc2626' },
+            { name: 'Palmeiras Verdão', color: '#16a34a' },
+            { name: 'São Paulo Tricolor', color: '#ef4444' },
+            { name: 'Corinthians Timão', color: '#f8fafc' },
+            { name: 'Fluminense Rio', color: '#15803d' },
+            { name: 'Grêmio Imortal', color: '#38bdf8' },
+            { name: 'Internacional Sul', color: '#b91c1c' },
+            { name: 'Atlético Galo', color: '#475569' },
+          ],
+        },
+      ],
+    },
+  },
+
+  consumables: [
+    { id: 'nrg_small', name: 'NRG Refresco', ico: '🥤', nrg: 25, price: 15, desc: '+25% Energía inmediata' },
+    { id: 'nrg_super', name: 'Super NRG Gold', ico: '⚡', nrg: 60, price: 32, desc: '+60% Energía inmediata' },
+    { id: 'nrg_max', name: 'Mega Pack Médico', ico: '💉', nrg: 100, price: 55, desc: 'Restaura 100% de Energía' },
+  ],
+
+  boots: [
+    { id: 'boot_curve', name: 'Botas Viper Efecto', ico: '👟', price: 85, bonusText: '+15 Efecto y Técnica', stat: 'technique', boost: 15 },
+    { id: 'boot_power', name: 'Botas Titan Cañón', ico: '🥾', price: 120, bonusText: '+15 Fuerza de Tiro', stat: 'power', boost: 15 },
+    { id: 'boot_gold', name: 'Botas New Star Oro', ico: '✨', price: 280, bonusText: '+20 en TODAS las habilidades', stat: 'all', boost: 20 },
+  ],
+
+  staff: [
+    { id: 'trainer', name: 'Entrenador Personal', ico: '🏋️', price: 140, desc: 'Entrenamientos cuestan -30% NRG y suben más rápido' },
+    { id: 'agent', name: 'Agente FIFA VIP', ico: '🕶️', price: 220, desc: '+40% sueldo en renovaciones y mejores traspasos' },
+  ],
+
+  lifestyle: [
+    { id: 'life_watch', name: 'Reloj Suizo', ico: '⌚', price: 35, stars: 1, desc: '+1 Estrella Estilo de Vida' },
+    { id: 'life_scooter', name: 'Moto Urbana', ico: '🛵', price: 75, stars: 2, desc: '+2 Estrellas Estilo de Vida' },
+    { id: 'life_apt', name: 'Ático de Lujo', ico: '🏢', price: 190, stars: 3, desc: '+3 Estrellas Estilo de Vida' },
+    { id: 'life_car', name: 'Deportivo Italiano', ico: '🏎️', price: 420, stars: 5, desc: '+5 Estrellas Estilo de Vida' },
+    { id: 'life_mansion', name: 'Mansión con Piscina', ico: '🏰', price: 950, stars: 8, desc: '+8 Estrellas Estilo de Vida' },
+    { id: 'life_yacht', name: 'SuperYate Privado', ico: '🛥️', price: 2200, stars: 12, desc: '+12 Estrellas Estilo de Vida' },
+    { id: 'life_island', name: 'Isla Privada Star', ico: '🏝️', price: 5000, stars: 20, desc: '+20 Estrellas Estilo de Vida' },
+  ],
+
+  sponsors: [
+    { id: 'sp_soda', name: 'Refrescos Fizz', ico: '🥤', minStar: 2, payPerMatch: 12 },
+    { id: 'sp_boots', name: 'Deportes Kronos', ico: '👟', minStar: 6, payPerMatch: 28 },
+    { id: 'sp_watch', name: 'Relojes Aurex', ico: '⌚', minStar: 12, payPerMatch: 60 },
+    { id: 'sp_air', name: 'Aerolíneas StarJet', ico: '✈️', minStar: 20, payPerMatch: 125 },
+  ],
+
+  dilemmas: [
+    {
+      title: 'RUEDA DE PRENSA',
+      text: 'Un periodista pregunta quién fue el responsable del rendimiento del equipo hoy.',
+      optA: { label: 'Elogiar a los compañeros (+Equipo, -Afición)', eff: { team: 12, fans: -5 } },
+      optB: { label: 'Destacar tu propio talento (+Afición, -Equipo)', eff: { fans: 12, team: -10 } },
+    },
+    {
+      title: 'CENA DE GALA DEL PATROCINADOR',
+      text: 'Tu patrocinador te invita a grabar un anuncio nocturno antes del entrenamiento.',
+      optA: { label: 'Ir al evento (+Patrocinador +$25, -Jefe)', eff: { sponsor: 15, boss: -10, money: 25 } },
+      optB: { label: 'Descansar para el entreno (+Jefe, -Patrocinador)', eff: { boss: 12, sponsor: -12 } },
+    },
+    {
+      title: 'PETICIÓN DE LA AFICIÓN',
+      text: 'Un grupo de jóvenes aficionados espera bajo la lluvia para que firmes camisetas.',
+      optA: { label: 'Quedarte firmando (-12% NRG, +Afición)', eff: { nrg: -12, fans: 15 } },
+      optB: { label: 'Irte directo a casa (+NRG intacta, -Afición)', eff: { fans: -10 } },
+    },
+    {
+      title: 'CITA ROMÁNTICA',
+      text: 'Tu pareja quiere ir de compras toda la tarde antes de la concentración.',
+      optA: { label: 'Llevarla de compras (-$20, +Pareja)', eff: { money: -20, girlfriend: 18 } },
+      optB: { label: 'Excusarte con el fútbol (+Jefe, -Pareja)', eff: { boss: 8, girlfriend: -15 } },
+    },
+  ],
+};

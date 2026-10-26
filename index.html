@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NEW STAR SOCCER - Edición Completa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- TOP BAR (NSS Classic Header) -->
+    <header id="top-bar" class="hidden">
+      <div class="top-left">
+        <div class="star-badge">
+          <span class="star-icon">★</span>
+          <span id="hdr-level">1</span>
+        </div>
+        <div class="player-meta">
+          <div id="hdr-name" class="hdr-name">JUGADOR</div>
+          <div id="hdr-club" class="hdr-club">C.D. Cantera</div>
+        </div>
+      </div>
+
+      <div class="top-center">
+        <div class="nrg-wrap" title="Energía (NRG)">
+          <span class="nrg-label">NRG</span>
+          <div class="nrg-bar-bg">
+            <div id="hdr-nrg-bar" class="nrg-bar-fill" style="width: 100%"></div>
+          </div>
+          <span id="hdr-nrg-val" class="nrg-val">100%</span>
+        </div>
+      </div>
+
+      <div class="top-right">
+        <div class="bucks-badge" title="StarBucks">
+          <span class="bucks-symbol">$</span>
+          <span id="hdr-money">50</span>
+        </div>
+        <button id="btn-sound" class="icon-btn" title="Sonido">🔊</button>
+      </div>
+    </header>
+
+    <!-- SCREEN 1: TITLE / NEW CAREER -->
+    <section id="screen-title" class="screen active">
+      <div class="nss-logo-box">
+        <div class="nss-star-crest">★</div>
+        <h1>NEW STAR<span>SOCCER</span></h1>
+        <p class="subtitle">VIVE EL SUEÑO DEL FÚTBOL PROFESIONAL</p>
+      </div>
+
+      <div class="card title-card">
+        <h2>CREAR CARRERA</h2>
+        <div class="form-group">
+          <label for="inp-player-name">APELLIDO EN CAMISETA</label>
+          <input type="text" id="inp-player-name" maxlength="14" value="RODRÍGUEZ" placeholder="Ej. PÉREZ" />
+        </div>
+        <div class="form-group">
+          <label for="sel-nationality">NACIONALIDAD / LIGA INICIAL</label>
+          <select id="sel-nationality">
+            <option value="ES">🇪🇸 España (Segunda Federación)</option>
+            <option value="AR">🇦🇷 Argentina (Primera C)</option>
+            <option value="MX">🇲🇽 México (Liga Expansión)</option>
+            <option value="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra (League Two)</option>
+            <option value="BR">🇧🇷 Brasil (Série C)</option>
+          </select>
+        </div>
+        <div class="title-actions">
+          <button id="btn-start-career" class="btn-nss btn-green btn-lg">¡EMPEZAR CARRERA! (16 AÑOS)</button>
+          <button id="btn-continue-career" class="btn-nss btn-blue btn-lg hidden">CONTINUAR PARTIDA</button>
+          <button id="btn-reset-save" class="btn-nss btn-red btn-sm hidden">BORRAR PARTIDA GUARDADA</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: CAREER HUB -->
+    <section id="screen-hub" class="screen">
+      <!-- Dynamic Tab Content -->
+      <main id="hub-content"></main>
+
+      <!-- Bottom Navigation Tabs -->
+      <nav id="bottom-nav">
+        <button class="nav-tab active" data-tab="overview">
+          <span class="tab-ico">⚽</span>
+          <span class="tab-txt">CLUB</span>
+        </button>
+        <button class="nav-tab" data-tab="skills">
+          <span class="tab-ico">⚡</span>
+          <span class="tab-txt">HABILIDAD</span>
+        </button>
+        <button class="nav-tab" data-tab="relations">
+          <span class="tab-ico">❤️</span>
+          <span class="tab-txt">RELACIONES</span>
+        </button>
+        <button class="nav-tab" data-tab="shop">
+          <span class="tab-ico">🛍️</span>
+          <span class="tab-txt">VIDA / TIENDA</span>
+        </button>
+        <button class="nav-tab" data-tab="casino">
+          <span class="tab-ico">🎰</span>
+          <span class="tab-txt">CASINO</span>
+        </button>
+      </nav>
+    </section>
+
+    <!-- SCREEN 3: MATCH ENGINE (COMMENTARY + 2D PITCH) -->
+    <section id="screen-match" class="screen">
+      <!-- Match Scoreboard -->
+      <div class="match-scoreboard">
+        <div class="team-box home">
+          <span id="match-home-badge" class="team-dot"></span>
+          <span id="match-home-name" class="team-name">LOCAL</span>
+        </div>
+        <div class="score-center">
+          <div class="score-digits">
+            <span id="match-home-score">0</span>
+            <span class="score-sep">-</span>
+            <span id="match-away-score">0</span>
+          </div>
+          <div id="match-clock" class="match-clock">00'</div>
+        </div>
+        <div class="team-box away">
+          <span id="match-away-name" class="team-name">VISITANTE</span>
+          <span id="match-away-badge" class="team-dot"></span>
+        </div>
+      </div>
+
+      <!-- Match Stats Strip -->
+      <div class="match-subbar">
+        <div class="match-stat-pill">
+          <span>NOTA:</span>
+          <strong id="match-rating">6.0</strong>
+        </div>
+        <div class="match-stat-pill">
+          <span>ACTITUD:</span>
+          <button id="btn-workrate" class="workrate-btn">NORMAL</button>
+        </div>
+        <div class="match-stat-pill">
+          <span>VIENTO:</span>
+          <strong id="match-wind">0 mph →</strong>
+        </div>
+        <div class="match-stat-pill">
+          <span>VEL:</span>
+          <button id="btn-sim-speed" class="speed-btn">1x</button>
+        </div>
+      </div>
+
+      <!-- Commentary Ticker View -->
+      <div id="match-ticker-panel" class="match-ticker-panel">
+        <div id="match-feed" class="match-feed"></div>
+      </div>
+
+      <!-- Interactive 2D Pitch Canvas Overlay (Used for Match Plays AND Skill Training!) -->
+      <div id="pitch-container" class="pitch-container hidden">
+        <canvas id="pitch-canvas" width="440" height="580"></canvas>
+
+        <!-- HUD overlay inside pitch -->
+        <div id="pitch-hud" class="pitch-hud">
+          <div id="pitch-banner" class="pitch-banner">¡OPORTUNIDAD DE TIRO!</div>
+          <div id="pitch-instructions" class="pitch-instructions">
+            Arrastra desde el balón para apuntar y elegir potencia
+          </div>
+        </div>
+
+        <!-- NSS Classic Ball Strike Spot Selector Modal -->
+        <div id="ball-spot-modal" class="ball-spot-modal hidden">
+          <div class="ball-spot-header">¡TOCA EL PUNTO DE IMPACTO!</div>
+          <div class="ball-spot-sub">Centro = Recto | Abajo = Vaselina/Alto | Lados = Efecto (Comba)</div>
+          <div class="ball-spot-wrapper">
+            <canvas id="ball-spot-canvas" width="190" height="190"></canvas>
+          </div>
+          <div class="ball-spot-footer">
+            <span id="spot-preview-label">Impacto: Centro (Raso/Medio)</span>
+            <button id="btn-strike-ball" class="btn-nss btn-green">¡CHUTAR AHORA!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL FOR DILEMMAS, INTERVIEWS, TRANSFERS, TRAINING & POST-MATCH -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+      <div class="modal-box">
+        <div id="modal-header" class="modal-header">NOTICIA</div>
+        <div id="modal-body" class="modal-body"></div>
+        <div id="modal-actions" class="modal-actions"></div>
+      </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast hidden"></div>
+  </div>
+
+  <script src="js/audio.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/pitch.js"></script>
+  <script src="js/minigames.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
